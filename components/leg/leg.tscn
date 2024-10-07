@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cylu7pjwgu6fx"]
+
+[ext_resource type="PackedScene" uid="uid://besfke5amim3j" path="res://leg.fbx" id="1_t87ic"]
+[ext_resource type="Script" path="res://components/leg/leg.gd" id="2_beh1d"]
+[ext_resource type="Script" path="res://components/leg/ray.gd" id="3_qnydr"]
+[ext_resource type="Script" path="res://components/leg/target.gd" id="4_ycfuf"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_10tcq"]
+
+[node name="leg" node_paths=PackedStringArray("skeleton") instance=ExtResource("1_t87ic")]
+script = ExtResource("2_beh1d")
+skeleton = NodePath("Armature/Skeleton3D/SkeletonIK3D")
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/1/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 1.00048)
+
+[node name="SkeletonIK3D" type="SkeletonIK3D" parent="Armature/Skeleton3D" index="4"]
+root_bone = &"Bone"
+tip_bone = &"Bone.001_end"
+target_node = NodePath("../../../targets/target")
+
+[node name="ray" type="Node3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 3, 0)
+
+[node name="1" type="RayCast3D" parent="ray" index="0" node_paths=PackedStringArray("target")]
+target_position = Vector3(0, -3.1, 0)
+script = ExtResource("3_qnydr")
+target = NodePath("target")
+
+[node name="target" type="Node3D" parent="ray/1" index="0"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ray/1/target" index="0"]
+mesh = SubResource("SphereMesh_10tcq")
+
+[node name="targets" type="Node3D" parent="." index="2"]
+
+[node name="target" type="Node3D" parent="targets" index="0" node_paths=PackedStringArray("target")]
+top_level = true
+script = ExtResource("4_ycfuf")
+target = NodePath("../../ray/1/target")

@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckfmi7fvs06"]
+
+[ext_resource type="PackedScene" uid="uid://b12umvs03pw2p" path="res://components/planet/planet.tscn" id="1_rnvle"]
+[ext_resource type="Script" path="res://addons/orbit_camera/orbit_camera.gd" id="6_iofsa"]
+[ext_resource type="PackedScene" uid="uid://ckjofkm1v3fui" path="res://components/noise-layer-ui/noise_layer_ui.tscn" id="7_w66ac"]
+[ext_resource type="Script" path="res://components/ui/ui.gd" id="7_xxgm4"]
+
+[sub_resource type="Environment" id="Environment_wnrvo"]
+background_mode = 1
+
+[sub_resource type="Theme" id="Theme_eqge7"]
+VBoxContainer/constants/separation = 10
+
+[node name="Node" type="Node"]
+
+[node name="game" type="Node3D" parent="."]
+metadata/credit = "\"KawaiiMeka\" (https://skfb.ly/p6K7q) by MrFetch is licensed under Creative Commons Attribution-NonCommercial (http://creativecommons.org/licenses/by-nc/4.0/)."
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="game"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0663757, 7.62939e-06, 48.372)
+sky_mode = 1
+
+[node name="OrbitCamera" type="Camera3D" parent="game"]
+environment = SubResource("Environment_wnrvo")
+script = ExtResource("6_iofsa")
+SCROLL_SPEED = -10.0
+ROTATE_SPEED = -0.1
+ANCHOR_NODE_PATH = NodePath("../../planet")
+
+[node name="ui" type="Control" parent="." node_paths=PackedStringArray("plannet")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_xxgm4")
+plannet = NodePath("../planet")
+
+[node name="title" type="RichTextLabel" parent="ui"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 86.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Tinny Planets"
+fit_content = true
+
+[node name="panel" type="PanelContainer" parent="ui"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.200521
+anchor_bottom = 1.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="hbox" type="VBoxContainer" parent="ui/panel"]
+layout_mode = 2
+
+[node name="resolution" type="HBoxContainer" parent="ui/panel/hbox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/panel/hbox/resolution"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Resolution"
+
+[node name="LineEdit" type="LineEdit" parent="ui/panel/hbox/resolution"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "900"
+
+[node name="Label" type="Label" parent="ui/panel/hbox"]
+layout_mode = 2
+text = "Noise Layers"
+
+[node name="Button" type="Button" parent="ui/panel/hbox"]
+layout_mode = 2
+text = "New"
+
+[node name="noise" type="VBoxContainer" parent="ui/panel/hbox"]
+layout_mode = 2
+theme = SubResource("Theme_eqge7")
+
+[node name="n1" parent="ui/panel/hbox/noise" instance=ExtResource("7_w66ac")]
+layout_mode = 2
+
+[node name="n2" parent="ui/panel/hbox/noise" instance=ExtResource("7_w66ac")]
+layout_mode = 2
+
+[node name="export" type="Button" parent="ui/panel/hbox"]
+layout_mode = 2
+text = "export"
+
+[node name="planet" parent="." instance=ExtResource("1_rnvle")]
+
+[connection signal="text_changed" from="ui/panel/hbox/resolution/LineEdit" to="ui" method="_on_line_edit_text_changed"]

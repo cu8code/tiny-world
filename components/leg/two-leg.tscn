@@ -1,0 +1,271 @@
+[gd_scene load_steps=17 format=4 uid="uid://vqqxg1f81scd"]
+
+[ext_resource type="Script" path="res://pages/player.gd" id="1_go8g8"]
+[ext_resource type="Script" path="res://components/leg/leg.gd" id="2_8hv7b"]
+[ext_resource type="Script" path="res://components/leg/ray.gd" id="3_5d8ic"]
+[ext_resource type="Script" path="res://components/leg/target.gd" id="4_al78p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4s08x"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_q4mm8"]
+resource_name = "Cube_001"
+_surfaces = [{
+"aabb": AABB(-0.01, -0.01, -0.01, 0.02, 0.02, 0.02),
+"attribute_data": PackedByteArray("AAAgPwAAQD8AACA/AACAPwAAwD4AAIA/AADAPgAAQD8AACA/AAAAPwAAID8AAEA/AADAPgAAQD8AAMA+AAAAPwAAID8AAIA+AAAgPwAAAD8AAMA+AAAAPwAAwD4AAIA+AAAgPwAAAAAAACA/AACAPgAAwD4AAIA+AADAPgAAAAAAAMA+AACAPgAAwD4AAAA/AAAAPgAAAD8AAAA+AACAPgAAYD8AAIA+AABgPwAAAD8AACA/AAAAPwAAID8AAIA+"),
+"bone_aabbs": [AABB(0, 0, 0, -1, -1, -1), AABB(-0.01, -0.01, -0.01, 0.02, 0.02001, 0.02001)],
+"format": 34359745559,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_4s08x"),
+"primitive": 3,
+"skin_data": PackedByteArray("AQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAA"),
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("CtcjvArXIzwK1yM8CtcjvArXI7wK1yM8CtcjvArXI7wK1yO8CtcjvArXIzwK1yO8CtcjPArXIzwK1yM8CtcjvArXIzwK1yM8CtcjvArXIzwK1yO8CtcjPArXIzwK1yO8CtcjPArXI7wK1yM8CtcjPArXIzwK1yM8CtcjPArXIzwK1yO8CtcjPArXI7wK1yO8CtcjvArXI7wK1yM8CtcjPArXI7wK1yM8CtcjPArXI7wK1yO8CtcjvArXI7wK1yO8CtcjPArXI7wK1yO8CtcjPArXIzwK1yO8CtcjvArXIzwK1yO8CtcjvArXI7wK1yO8CtcjvArXI7wK1yM8CtcjvArXIzwK1yM8CtcjPArXIzwK1yM8CtcjPArXI7wK1yM8AAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//7//f////3//v/9/////f/+//3////9//7//f////3//v////3//f/+/////f/9//7////9//3//v////3//f/+//38AAP9//7//fwAA/3//v/9/AAD/f/+//38AAP9//7//////////v/////////+//////////7//////////v/9//38AAP+//3//fwAA/7//f/9/AAD/v/9//38AAP+/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="Skin" id="Skin_nwb7u"]
+resource_name = "Skin"
+bind_count = 2
+bind/0/name = &"Bone"
+bind/0/bone = -1
+bind/0/pose = Transform3D(-0.00182014, -1.2227e-10, -0.222452, 0.444903, 5.9777e-08, -0.00091007, 1.19554e-07, -0.222454, -1.22282e-10, 4.00538e-05, 0.0148759, 1.40094e-09)
+bind/1/name = &"Bone.001"
+bind/1/bone = -1
+bind/1/pose = Transform3D(1.94745e-08, 1.96521e-08, -0.222454, 0.444907, 2.98886e-08, 9.73727e-09, 5.97772e-08, -0.222454, -1.9652e-08, 6.00014e-05, 0.00487573, 7.51118e-10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bs77v"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ipw2i"]
+resource_name = "Cube_002"
+_surfaces = [{
+"aabb": AABB(-0.01, -0.01, -0.01, 0.02, 0.02, 0.02),
+"attribute_data": PackedByteArray("AAAgPwAAQD8AACA/AACAPwAAwD4AAIA/AADAPgAAQD8AACA/AAAAPwAAID8AAEA/AADAPgAAQD8AAMA+AAAAPwAAID8AAIA+AAAgPwAAAD8AAMA+AAAAPwAAwD4AAIA+AAAgPwAAAAAAACA/AACAPgAAwD4AAIA+AADAPgAAAAAAAMA+AACAPgAAwD4AAAA/AAAAPgAAAD8AAAA+AACAPgAAYD8AAIA+AABgPwAAAD8AACA/AAAAPwAAID8AAIA+"),
+"bone_aabbs": [AABB(0, 0, 0, -1, -1, -1), AABB(-0.01, -0.01, -0.01, 0.02, 0.02001, 0.02001)],
+"format": 34359745559,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_bs77v"),
+"primitive": 3,
+"skin_data": PackedByteArray("AQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAA"),
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("CtcjvArXIzwK1yM8CtcjvArXI7wK1yM8CtcjvArXI7wK1yO8CtcjvArXIzwK1yO8CtcjPArXIzwK1yM8CtcjvArXIzwK1yM8CtcjvArXIzwK1yO8CtcjPArXIzwK1yO8CtcjPArXI7wK1yM8CtcjPArXIzwK1yM8CtcjPArXIzwK1yO8CtcjPArXI7wK1yO8CtcjvArXI7wK1yM8CtcjPArXI7wK1yM8CtcjPArXI7wK1yO8CtcjvArXI7wK1yO8CtcjPArXI7wK1yO8CtcjPArXIzwK1yO8CtcjvArXIzwK1yO8CtcjvArXI7wK1yO8CtcjvArXI7wK1yM8CtcjvArXIzwK1yM8CtcjPArXIzwK1yM8CtcjPArXI7wK1yM8AAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//7//f////3//v/9/////f/+//3////9//7//f////3//v////3//f/+/////f/9//7////9//3//v////3//f/+//38AAP9//7//fwAA/3//v/9/AAD/f/+//38AAP9//7//////////v/////////+//////////7//////////v/9//38AAP+//3//fwAA/7//f/9/AAD/v/9//38AAP+/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xo2ru"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6hvge"]
+resource_name = "Cube_003"
+_surfaces = [{
+"aabb": AABB(-0.01, -0.01, -0.01, 0.02, 0.02, 0.02),
+"attribute_data": PackedByteArray("AAAgPwAAQD8AACA/AACAPwAAwD4AAIA/AADAPgAAQD8AACA/AAAAPwAAID8AAEA/AADAPgAAQD8AAMA+AAAAPwAAID8AAIA+AAAgPwAAAD8AAMA+AAAAPwAAwD4AAIA+AAAgPwAAAAAAACA/AACAPgAAwD4AAIA+AADAPgAAAAAAAMA+AACAPgAAwD4AAAA/AAAAPgAAAD8AAAA+AACAPgAAYD8AAIA+AABgPwAAAD8AACA/AAAAPwAAID8AAIA+"),
+"bone_aabbs": [AABB(-0.01, -0.01, -0.01, 0.02, 0.02001, 0.02001)],
+"format": 34359745559,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_xo2ru"),
+"primitive": 3,
+"skin_data": PackedByteArray("AAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAA"),
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("CtcjvArXIzwK1yM8CtcjvArXI7wK1yM8CtcjvArXI7wK1yO8CtcjvArXIzwK1yO8CtcjPArXIzwK1yM8CtcjvArXIzwK1yM8CtcjvArXIzwK1yO8CtcjPArXIzwK1yO8CtcjPArXI7wK1yM8CtcjPArXIzwK1yM8CtcjPArXIzwK1yO8CtcjPArXI7wK1yO8CtcjvArXI7wK1yM8CtcjPArXI7wK1yM8CtcjPArXI7wK1yO8CtcjvArXI7wK1yO8CtcjPArXI7wK1yO8CtcjPArXIzwK1yO8CtcjvArXIzwK1yO8CtcjvArXI7wK1yO8CtcjvArXI7wK1yM8CtcjvArXIzwK1yM8CtcjPArXIzwK1yM8CtcjPArXI7wK1yM8AAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//7//f////3//v/9/////f/+//3////9//7//f////3//v////3//f/+/////f/9//7////9//3//v////3//f/+//38AAP9//7//fwAA/3//v/9/AAD/f/+//38AAP9//7//////////v/////////+//////////7//////////v/9//38AAP+//3//fwAA/7//f/9/AAD/v/9//38AAP+/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="Skin" id="Skin_wy4en"]
+resource_name = "Skin2"
+bind_count = 2
+bind/0/name = &"Bone"
+bind/0/bone = -1
+bind/0/pose = Transform3D(-0.00182014, -1.2227e-10, -0.222452, 0.444903, 5.9777e-08, -0.00091007, 1.19554e-07, -0.222454, -1.22282e-10, 0.000109081, 0.00496206, -2.44656e-05)
+bind/1/name = &"Bone.001"
+bind/1/bone = -1
+bind/1/pose = Transform3D(1.94745e-08, 1.96521e-08, -0.222454, 0.444907, 2.98886e-08, 9.73727e-09, 5.97772e-08, -0.222454, -1.9652e-08, 8.84695e-05, -0.00503834, -2.44649e-05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_01stb"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_h37hm"]
+resource_name = "Cube_005"
+_surfaces = [{
+"aabb": AABB(-0.01, -0.01, -0.01, 0.030615, 0.02, 0.02),
+"attribute_data": PackedByteArray("AAAgPwAAQD8AACA/AACAPwAAwD4AAIA/AADAPgAAQD8AAMA+AAAAPwAAID8AAAA/AAAgPwAAQD8AAMA+AABAPwAAID8AAIA+AAAgPwAAAD8AAMA+AAAAPwAAwD4AAIA+AAAgPwAAAAAAACA/AACAPgAAwD4AAIA+AADAPgAAAAAAAMA+AACAPgAAwD4AAAA/AAAAPgAAAD8AAAA+AACAPgAAID8AAIA+AABgPwAAgD4AAGA/AAAAPwAAID8AAAA/"),
+"bone_aabbs": [AABB(0, 0, 0, -1, -1, -1), AABB(-0.01, -0.01, -0.01, 0.030615, 0.02001, 0.02001)],
+"format": 34359745559,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_01stb"),
+"primitive": 3,
+"skin_data": PackedByteArray("AQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAA"),
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("CtcjvArXIzwK1yM8CtcjvArXI7wK1yM8CtcjvArXI7wK1yO8CtcjvArXIzwK1yO8CtcjPArXIzwK1yO81+CoPA3XIzwvsiG8CtcjvArXIzwK1yM8CtcjvArXIzwK1yO81+CoPAjXI7wvsiG81+CoPA3XIzwvsiG8CtcjPArXIzwK1yO8CtcjPArXI7wK1yO8CtcjvArXI7wK1yM81+CoPAjXI7wvsiG8CtcjPArXI7wK1yO8CtcjvArXI7wK1yO8CtcjPArXI7wK1yO8CtcjPArXIzwK1yO8CtcjvArXIzwK1yO8CtcjvArXI7wK1yO81+CoPAjXI7wvsiG8CtcjvArXI7wK1yM8CtcjvArXIzwK1yM81+CoPA3XIzwvsiG8AAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//7//f////d7/v/9///9v/v+//3///+ea/7//f////3//v///b/5v/v+///9v/m/+/7///2/+b/7/v///b/5v/v+//38AAOea/7//fwAAb/7/v/9/AAD93v+//38AAP9//7//////////v/////////+//////////7//////////v1+y/39gMv+/X7L/f2Ay/79fsv9/YDL/v1+y/39gMv+/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="Skin" id="Skin_3sd3a"]
+resource_name = "Skin3"
+bind_count = 2
+bind/0/name = &"Bone"
+bind/0/bone = -1
+bind/0/pose = Transform3D(-0.222452, -1.2227e-10, 0.00091008, -0.00091008, 5.9777e-08, -0.222452, -1.22284e-10, -0.222454, -5.9777e-08, -0.00506489, 0.0170336, 2.28862e-09)
+bind/1/name = &"Bone.001"
+bind/1/bone = -1
+bind/1/pose = Transform3D(-0.222454, 1.96521e-08, 2.62406e-15, -2.64035e-15, 2.98886e-08, -0.222454, -1.96521e-08, -0.222454, -2.98886e-08, -0.00503607, 0.00705427, 8.98691e-10)
+
+[sub_resource type="SphereMesh" id="SphereMesh_10tcq"]
+
+[node name="player" type="Node3D"]
+script = ExtResource("1_go8g8")
+
+[node name="left" type="Node3D" parent="." node_paths=PackedStringArray("skeleton")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.779195)
+script = ExtResource("2_8hv7b")
+skeleton = NodePath("Armature/Skeleton3D/SkeletonIK3D")
+
+[node name="Armature" type="Node3D" parent="left"]
+transform = Transform3D(-224.764, 1.04665e-07, -0.919555, 0.919555, 5.35884e-05, -224.764, 1.04665e-07, -224.766, -5.35884e-05, 0.0226817, 4.34354, 5.83593e-07)
+
+[node name="Skeleton3D" type="Skeleton3D" parent="left/Armature"]
+bones/0/name = "Bone"
+bones/0/parent = -1
+bones/0/rest = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+bones/0/enabled = true
+bones/0/position = Vector3(0, 0, 0)
+bones/0/rotation = Quaternion(0.707107, 0, 0, 0.707107)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/name = "Bone.001"
+bones/1/parent = 0
+bones/1/rest = Transform3D(0.999992, -0.0040911, 8.83415e-08, 0.0040911, 0.999992, -1.33997e-07, -8.77926e-08, 1.34358e-07, 1, -2.37169e-20, 0.01, 2.0232e-17)
+bones/1/enabled = true
+bones/1/position = Vector3(0, 0.01, 0)
+bones/1/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 1.00048)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/name = "Bone.001_end"
+bones/2/parent = 1
+bones/2/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0081739, 0)
+bones/2/enabled = true
+bones/2/position = Vector3(0, 0.0081739, 0)
+bones/2/rotation = Quaternion(0, 0, 0, 1)
+bones/2/scale = Vector3(1, 1, 1)
+
+[node name="Cube" type="MeshInstance3D" parent="left/Armature/Skeleton3D"]
+mesh = SubResource("ArrayMesh_q4mm8")
+skin = SubResource("Skin_nwb7u")
+
+[node name="Cube_001" type="MeshInstance3D" parent="left/Armature/Skeleton3D"]
+mesh = SubResource("ArrayMesh_ipw2i")
+skin = SubResource("Skin_nwb7u")
+
+[node name="Cube_002" type="MeshInstance3D" parent="left/Armature/Skeleton3D"]
+mesh = SubResource("ArrayMesh_6hvge")
+skin = SubResource("Skin_wy4en")
+
+[node name="Cube_003" type="MeshInstance3D" parent="left/Armature/Skeleton3D"]
+mesh = SubResource("ArrayMesh_h37hm")
+skin = SubResource("Skin_3sd3a")
+
+[node name="SkeletonIK3D" type="SkeletonIK3D" parent="left/Armature/Skeleton3D"]
+root_bone = &"Bone"
+tip_bone = &"Bone.001_end"
+target_node = NodePath("../../../left-targets/left-target")
+
+[node name="ray" type="Node3D" parent="left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 3, 0)
+
+[node name="left-1" type="RayCast3D" parent="left/ray" node_paths=PackedStringArray("target")]
+target_position = Vector3(0, -3.1, 0)
+script = ExtResource("3_5d8ic")
+target = NodePath("left-target")
+
+[node name="left-target" type="Node3D" parent="left/ray/left-1"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="left/ray/left-1/left-target"]
+mesh = SubResource("SphereMesh_10tcq")
+
+[node name="left-targets" type="Node3D" parent="left"]
+
+[node name="left-target" type="Node3D" parent="left/left-targets" node_paths=PackedStringArray("target", "adjacent")]
+top_level = true
+script = ExtResource("4_al78p")
+target = NodePath("../../ray/left-1/left-target")
+adjacent = NodePath("../../../right/right-targets/right-target")
+is_moving = true
+
+[node name="right" type="Node3D" parent="." node_paths=PackedStringArray("skeleton")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.37234)
+script = ExtResource("2_8hv7b")
+skeleton = NodePath("Armature/Skeleton3D/SkeletonIK3D")
+
+[node name="Armature" type="Node3D" parent="right"]
+transform = Transform3D(-224.764, 1.04665e-07, -0.919555, 0.919555, 5.35884e-05, -224.764, 1.04665e-07, -224.766, -5.35884e-05, 0.0226817, 4.34354, 5.83593e-07)
+
+[node name="Skeleton3D" type="Skeleton3D" parent="right/Armature"]
+bones/0/name = "Bone"
+bones/0/parent = -1
+bones/0/rest = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+bones/0/enabled = true
+bones/0/position = Vector3(0, 0, 0)
+bones/0/rotation = Quaternion(0.707107, 0, 0, 0.707107)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/name = "Bone.001"
+bones/1/parent = 0
+bones/1/rest = Transform3D(0.999992, -0.0040911, 8.83415e-08, 0.0040911, 0.999992, -1.33997e-07, -8.77926e-08, 1.34358e-07, 1, -2.37169e-20, 0.01, 2.0232e-17)
+bones/1/enabled = true
+bones/1/position = Vector3(0, 0.01, 0)
+bones/1/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 1.00048)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/name = "Bone.001_end"
+bones/2/parent = 1
+bones/2/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0081739, 0)
+bones/2/enabled = true
+bones/2/position = Vector3(0, 0.0081739, 0)
+bones/2/rotation = Quaternion(0, 0, 0, 1)
+bones/2/scale = Vector3(1, 1, 1)
+
+[node name="Cube" type="MeshInstance3D" parent="right/Armature/Skeleton3D"]
+mesh = SubResource("ArrayMesh_q4mm8")
+skin = SubResource("Skin_nwb7u")
+
+[node name="Cube_001" type="MeshInstance3D" parent="right/Armature/Skeleton3D"]
+mesh = SubResource("ArrayMesh_ipw2i")
+skin = SubResource("Skin_nwb7u")
+
+[node name="Cube_002" type="MeshInstance3D" parent="right/Armature/Skeleton3D"]
+mesh = SubResource("ArrayMesh_6hvge")
+skin = SubResource("Skin_wy4en")
+
+[node name="Cube_003" type="MeshInstance3D" parent="right/Armature/Skeleton3D"]
+mesh = SubResource("ArrayMesh_h37hm")
+skin = SubResource("Skin_3sd3a")
+
+[node name="SkeletonIK3D" type="SkeletonIK3D" parent="right/Armature/Skeleton3D"]
+root_bone = &"Bone"
+tip_bone = &"Bone.001_end"
+target_node = NodePath("../../../right-targets/right-target")
+
+[node name="ray" type="Node3D" parent="right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 3, 0)
+
+[node name="right-1" type="RayCast3D" parent="right/ray" node_paths=PackedStringArray("target")]
+target_position = Vector3(0, -3.1, 0)
+script = ExtResource("3_5d8ic")
+target = NodePath("right-target")
+
+[node name="right-target" type="Node3D" parent="right/ray/right-1"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="right/ray/right-1/right-target"]
+mesh = SubResource("SphereMesh_10tcq")
+
+[node name="right-targets" type="Node3D" parent="right"]
+
+[node name="right-target" type="Node3D" parent="right/right-targets" node_paths=PackedStringArray("target", "adjacent")]
+top_level = true
+script = ExtResource("4_al78p")
+target = NodePath("../../ray/right-1/right-target")
+adjacent = NodePath("../../../left/left-targets/left-target")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70193, 2.92177, 3.78527)

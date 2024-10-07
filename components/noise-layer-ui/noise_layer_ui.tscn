@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckjofkm1v3fui"]
+
+[sub_resource type="Theme" id="Theme_wo41d"]
+VBoxContainer/constants/separation = 4
+
+[node name="n1" type="VBoxContainer"]
+theme = SubResource("Theme_wo41d")
+
+[node name="gain" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="gain"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gain"
+
+[node name="LineEdit" type="LineEdit" parent="gain"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0.1"
+
+[node name="seed" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="seed"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Seed"
+
+[node name="LineEdit" type="LineEdit" parent="seed"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0.1"
+
+[node name="frequency" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="frequency"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Frequency"
+
+[node name="LineEdit" type="LineEdit" parent="frequency"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0.1"
