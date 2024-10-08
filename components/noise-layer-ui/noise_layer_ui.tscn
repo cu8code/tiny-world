@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckjofkm1v3fui"]
+[gd_scene load_steps=3 format=3 uid="uid://ckjofkm1v3fui"]
+
+[ext_resource type="Script" path="res://components/noise-layer-ui/noise_layer_ui.gd" id="1_d57om"]
 
 [sub_resource type="Theme" id="Theme_wo41d"]
 VBoxContainer/constants/separation = 4
 
 [node name="n1" type="VBoxContainer"]
 theme = SubResource("Theme_wo41d")
+script = ExtResource("1_d57om")
 
 [node name="gain" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -44,3 +47,7 @@ text = "Frequency"
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0.1"
+
+[connection signal="text_changed" from="gain/LineEdit" to="." method="_on_gain_change"]
+[connection signal="text_changed" from="seed/LineEdit" to="." method="_on_seed_changed"]
+[connection signal="text_changed" from="frequency/LineEdit" to="." method="_on_frequency_changed"]

@@ -15,10 +15,10 @@ class_name PlanetDataCollector
 	set(val):
 		resolution = val
 		emit_signal("changed")
-@export var data: Array[PlanetData]:
+@export var noise_layer: Array[PlanetData]:
 	set(val):
-		data = val
-		for d in data:
+		noise_layer = val
+		for d in noise_layer:
 			if d != null and not d.is_connected("changed", on_data_change):
 				d.connect("changed", on_data_change)
 
@@ -30,7 +30,7 @@ func on_data_change() -> void:
 
 func point_on_planet(point: Vector3) -> Vector3:
 	var elevesion := 0.0
-	for c in data:
+	for c in noise_layer:
 		if c != null and c.noise != null:
 			var l_elevesion := c.noise.get_noise_3dv(point) * c.noise_gain
 			l_elevesion = (c.noise.get_noise_3dv(point) * c.noise_gain + 1) / 2.0

@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://ckfmi7fvs06"]
 
 [ext_resource type="PackedScene" uid="uid://b12umvs03pw2p" path="res://components/planet/planet.tscn" id="1_rnvle"]
+[ext_resource type="Resource" uid="uid://c3pmc5d3skoej" path="res://pages/game.tres" id="4_sut84"]
 [ext_resource type="Script" path="res://addons/orbit_camera/orbit_camera.gd" id="6_iofsa"]
-[ext_resource type="PackedScene" uid="uid://ckjofkm1v3fui" path="res://components/noise-layer-ui/noise_layer_ui.tscn" id="7_w66ac"]
 [ext_resource type="Script" path="res://components/ui/ui.gd" id="7_xxgm4"]
 
 [sub_resource type="Environment" id="Environment_wnrvo"]
@@ -26,6 +26,9 @@ script = ExtResource("6_iofsa")
 SCROLL_SPEED = -10.0
 ROTATE_SPEED = -0.1
 ANCHOR_NODE_PATH = NodePath("../../planet")
+
+[node name="planet" parent="." instance=ExtResource("1_rnvle")]
+data = ExtResource("4_sut84")
 
 [node name="ui" type="Control" parent="." node_paths=PackedStringArray("plannet")]
 layout_mode = 3
@@ -77,7 +80,7 @@ text = "900"
 layout_mode = 2
 text = "Noise Layers"
 
-[node name="Button" type="Button" parent="ui/panel/hbox"]
+[node name="new" type="Button" parent="ui/panel/hbox"]
 layout_mode = 2
 text = "New"
 
@@ -85,16 +88,9 @@ text = "New"
 layout_mode = 2
 theme = SubResource("Theme_eqge7")
 
-[node name="n1" parent="ui/panel/hbox/noise" instance=ExtResource("7_w66ac")]
-layout_mode = 2
-
-[node name="n2" parent="ui/panel/hbox/noise" instance=ExtResource("7_w66ac")]
-layout_mode = 2
-
 [node name="export" type="Button" parent="ui/panel/hbox"]
 layout_mode = 2
 text = "export"
 
-[node name="planet" parent="." instance=ExtResource("1_rnvle")]
-
 [connection signal="text_changed" from="ui/panel/hbox/resolution/LineEdit" to="ui" method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="ui/panel/hbox/new" to="ui" method="_on_new_pressed"]

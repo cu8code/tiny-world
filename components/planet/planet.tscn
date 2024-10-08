@@ -4,19 +4,19 @@
 [ext_resource type="Shader" path="res://components/planet/planet.gdshader" id="2_1mk1p"]
 [ext_resource type="Script" path="res://components/planet/planet_mesh.gd" id="2_c5wam"]
 
-[sub_resource type="Gradient" id="Gradient_mwsi2"]
-offsets = PackedFloat32Array(0, 0.106145, 0.124277, 0.280347, 0.632948, 1)
-colors = PackedColorArray(0, 0, 1, 1, 0.020586, 0.192887, 0.210644, 1, 0.51, 0.490875, 0.1275, 1, 0.101563, 0.233632, 0.221612, 1, 0.353966, 0.360632, 0.255799, 1, 1, 1, 1, 1)
+[sub_resource type="Gradient" id="Gradient_lu80j"]
+offsets = PackedFloat32Array(0, 0.226257, 0.469274, 0.553073, 0.689944)
+colors = PackedColorArray(0, 0, 1, 1, 0.948667, 1, 0.23, 1, 0.0955132, 0.25058, 0.184273, 1, 0.513167, 0.313736, 0.27879, 1, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_q3ooa"]
-gradient = SubResource("Gradient_mwsi2")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yvqdq"]
+gradient = SubResource("Gradient_lu80j")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qm1ml"]
 render_priority = 0
 shader = ExtResource("2_1mk1p")
 shader_parameter/min_height = 9.9
-shader_parameter/max_height = 12.014
-shader_parameter/usample = SubResource("GradientTexture1D_q3ooa")
+shader_parameter/max_height = 12.6267
+shader_parameter/usample = SubResource("GradientTexture1D_yvqdq")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_l5f5v"]
 _surfaces = [{

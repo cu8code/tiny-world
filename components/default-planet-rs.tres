@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PlanetDataCollector" load_steps=9 format=3 uid="uid://chwrpydmo7a5"]
 
-[ext_resource type="Script" path="res://components/planet/planet-rs-data.gd" id="1_bj61e"]
+[ext_resource type="Script" path="res://components/planet-rs-data.gd" id="1_bj61e"]
 [ext_resource type="Script" path="res://components/planet/planet-rs.gd" id="2_lhb5i"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ua8s8"]

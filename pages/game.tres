@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="PlanetDataCollector" load_steps=7 format=3 uid="uid://c3pmc5d3skoej"]
+
+[ext_resource type="Script" path="res://components/planet-rs-data.gd" id="1_gk1my"]
+[ext_resource type="Script" path="res://components/planet/planet-rs.gd" id="2_d2ooj"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xmrq1"]
+frequency = 0.8144
+
+[sub_resource type="Resource" id="Resource_djgwj"]
+script = ExtResource("1_gk1my")
+noise_gain = 1.0
+min_height = 0.6
+noise = SubResource("FastNoiseLite_xmrq1")
+
+[sub_resource type="Gradient" id="Gradient_lu80j"]
+offsets = PackedFloat32Array(0, 0.226257, 0.469274, 0.553073, 0.689944)
+colors = PackedColorArray(0, 0, 1, 1, 0.948667, 1, 0.23, 1, 0.0955132, 0.25058, 0.184273, 1, 0.513167, 0.313736, 0.27879, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yvqdq"]
+gradient = SubResource("Gradient_lu80j")
+
+[resource]
+script = ExtResource("2_d2ooj")
+texture = SubResource("GradientTexture1D_yvqdq")
+radius = 10.0
+resolution = 10
+noise_layer = Array[ExtResource("1_gk1my")]([SubResource("Resource_djgwj")])

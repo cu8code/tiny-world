@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="PlanetDataCollector" load_steps=9 format=3 uid="uid://crkb3vwqg13dj"]
+
+[ext_resource type="Script" path="res://components/planet-rs-data.gd" id="1_euowg"]
+[ext_resource type="Script" path="res://components/planet/planet-rs.gd" id="2_k2tqd"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4rt8m"]
+frequency = 0.6632
+
+[sub_resource type="Resource" id="Resource_ibii8"]
+script = ExtResource("1_euowg")
+noise_gain = 2.0
+min_height = 0.8
+noise = SubResource("FastNoiseLite_4rt8m")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1a17a"]
+seed = 10
+frequency = 0.0766
+offset = Vector3(5.35, 0.35, 0)
+
+[sub_resource type="Resource" id="Resource_fckyb"]
+script = ExtResource("1_euowg")
+noise_gain = 3.0
+min_height = 0.9
+noise = SubResource("FastNoiseLite_1a17a")
+
+[sub_resource type="Gradient" id="Gradient_uivyd"]
+offsets = PackedFloat32Array(0, 0.179191, 0.5, 0.560694, 0.635838, 0.988439)
+colors = PackedColorArray(0, 0, 1, 1, 0.212167, 0.1856, 0.00312636, 1, 0.0286622, 0.316649, 0.326806, 1, 0.309871, 0.382904, 0.16688, 1, 0.603306, 0.452039, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_aa3b5"]
+gradient = SubResource("Gradient_uivyd")
+
+[resource]
+script = ExtResource("2_k2tqd")
+texture = SubResource("GradientTexture1D_aa3b5")
+radius = 10.0
+resolution = 10
+noise_layer = Array[ExtResource("1_euowg")]([SubResource("Resource_ibii8"), SubResource("Resource_fckyb")])
